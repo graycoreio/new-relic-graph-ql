@@ -5,7 +5,7 @@ This module intends to create [custom event data](https://docs.newrelic.com/docs
 
 ## Details
 
-This module depends on [Magento 2 - Automatic GraphQL transaction naming for New Relic](https://github.com/joma-webdevs/automatic-graphql-transaction-naming-for-new-relic) from [joma-webdevs](https://github.com/joma-webdevs) to extract query details, as a side effect it will add to the [APM transaction](https://docs.newrelic.com/docs/apm/transactions/intro-transactions/transactions-new-relic-apm/) registers with more GraphQl request data
+This module depends on [Magento 2 - Automatic GraphQL transaction naming for New Relic](https://github.com/joma-webdevs/automatic-graphql-transaction-naming-for-new-relic) from [joma-webdevs](https://github.com/joma-webdevs) to extract query details, as a side effect it will add to the [APM transaction](https://docs.newrelic.com/docs/apm/transactions/intro-transactions/transactions-new-relic-apm/) more GraphQl request data
 
 The event name is **GraphQlTransaction** and its data has the following structure:
 
