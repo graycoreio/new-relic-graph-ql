@@ -1,16 +1,15 @@
 <?php
+
 /**
- * FileDoc
+ * Copyright © Graycore, LLC. All rights reserved.
+ * See LICENSE.md for details.
  */
+
 namespace Graycore\NewRelicGraphQl\Plugin;
 
-use Magento\Framework\GraphQl\Query\Resolver\ContextInterface;
 use Magento\Framework\GraphQl\Schema;
 use Magento\Framework\GraphQl\Query\QueryProcessor;
 
-/**
- * Undocumented class
- */
 class CustomEventProcessor
 {
     const GRAPH_QL_EVENT_NAME='GraphQlTransaction';

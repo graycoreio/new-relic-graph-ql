@@ -1,6 +1,7 @@
 <?php
 /**
- * FileDoc
+ * Copyright © Graycore, LLC. All rights reserved.
+ * See LICENSE.md for details.
  */
 
 namespace Graycore\NewRelicGraphQl\NewRelic\Api;
