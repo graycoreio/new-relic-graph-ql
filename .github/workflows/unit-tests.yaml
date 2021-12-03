@@ -1,0 +1,32 @@
+name: PHPUnit Unit Tests
+
+on:
+  push:
+    branches:
+    - main
+    paths-ignore:
+    - "docs/**"
+    - README.md
+  pull_request:
+    branches:
+    - main
+    paths-ignore:
+    - "docs/**"
+    - README.md
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Add HTTP basic auth credentials
+      run: echo '${{ secrets.COMPOSER_AUTH_JSON }}' > $GITHUB_WORKSPACE/auth.json
+
+    - uses: php-actions/composer@v5 # or alternative dependency management
+      with:
+        php_version: 7.4
+        version: 2
+        php_extensions: bcmath curl dom gd hash iconv intl openssl xsl simplexml
+    - uses: php-actions/phpunit@v3
