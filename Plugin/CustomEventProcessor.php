@@ -50,20 +50,15 @@ class CustomEventProcessor
     /**
      * Create new relic custom event for each base node on a GraphQl transaction
      *
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      * @param QueryProcessor $subject
      * @param Schema $schema
      * @param string $source
-     * @param ContextInterface|null $contextValue
-     * @param array|null $variableValues
-     * @param string|null $operationName
      */
     public function beforeProcess(
         QueryProcessor $subject,
         Schema $schema,
-        string $source,
-        ContextInterface $contextValue = null,
-        array $variableValues = null,
-        string $operationName = null
+        string $source
     ) {
         $graphQlData = $this->graphQlDataHelper->getTransactionData($schema, $source);
 
