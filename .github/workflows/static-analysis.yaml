@@ -1,0 +1,37 @@
+name: Static Analysis
+on:
+  push:
+    branches:
+    - main
+    paths-ignore:
+    - "docs/**"
+    - README.md
+  pull_request:
+    branches:
+    - main
+    paths-ignore:
+    - "docs/**"
+    - README.md
+jobs:
+  phpstan:
+    name: M2 PHPStan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Add HTTP basic auth credentials
+        run: echo '${{ secrets.COMPOSER_AUTH_JSON }}' > $GITHUB_WORKSPACE/auth.json
+      - uses: actions/cache@v2
+        name: Cache Composer dependencies
+        with:
+              path: /tmp/composer-cache
+              key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+      - uses: php-actions/composer@v5
+        with:
+            php_version: 7.4
+            version: 2
+            php_extensions: bcmath curl dom gd hash iconv intl openssl xsl simplexml
+      - uses: php-actions/phpstan@v2
+        with:
+          php_version: 7.4
+          configuration: phpstan.neon
+          memory_limit: 1G

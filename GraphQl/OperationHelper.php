@@ -14,7 +14,7 @@ class OperationHelper
         }
 
         $schemaConfig = $schema->getConfig();
-        if (!$schemaConfig) {
+        if (!$schemaConfig) { // @phpstan-ignore-line
             return null;
         }
 
