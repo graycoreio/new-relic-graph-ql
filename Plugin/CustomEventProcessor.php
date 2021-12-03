@@ -60,10 +60,7 @@ class CustomEventProcessor
     public function beforeProcess(
         QueryProcessor $subject,
         Schema $schema,
-        string $source,
-        ContextInterface $contextValue = null,
-        array $variableValues = null,
-        string $operationName = null
+        string $source
     ) {
         $graphQlData = $this->graphQlDataHelper->getTransactionData($schema, $source);
 
