@@ -6,8 +6,11 @@
     "license": "MIT",
     "require": {
         "magento/framework": "^102.0 || ^103.0",
-        "jomashop/module-new-relic-monitoring-for-gql": "^1.1",
-        "magento/module-new-relic-reporting": "^100.4.1"
+        "magento/module-new-relic-reporting": "100.4.1",
+        "jomashop/module-new-relic-monitoring-for-gql": "^1.1"
+    },
+    "replace": {
+        "magento/magento-composer-installer": "*"
     },
     "require-dev": {
         "magento/magento-coding-standard": "^5.0",
