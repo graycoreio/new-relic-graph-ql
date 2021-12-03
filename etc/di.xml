@@ -1,0 +1,6 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Graycore\NewRelicGraphQl\NewRelic\Api\CustomEventGeneratorInterface" type="Graycore\NewRelicGraphQl\NewRelic\CustomEventGenerator" />
+    <type name="Magento\Framework\GraphQl\Query\QueryProcessor">
+        <plugin name="create-graphql-custom-event" type="Graycore\NewRelicGraphQl\Plugin\CustomEventProcessor" sortOrder="10" disabled="false"/>
+    </type>
+</config>
